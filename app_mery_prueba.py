@@ -9,8 +9,15 @@ st.subheader('Ingrese las características de la flor y vea el resultado')
 st.text('Este modelo utiliza las características de Iris para predecir su especie.')
 
 # Cargar el modelo serializado
-with open(r'C:\Users\maria\Documents\ITBA MARIA\4 1Q\AnalisisPredictivoAvanzado\Data\modelo_prueba_iris.pkl', 'rb') as file:
+import os
+
+# Define la ruta relativa
+file_path = os.path.join('Data', 'modelo_prueba_iris.pkl')
+
+# Abre el archivo
+with open(file_path, 'rb') as file:
     model = pickle.load(file)
+
 
 
 # Crear sliders para ingresar las características de Iris

@@ -11,14 +11,12 @@ st.text('Este modelo utiliza las características de Iris para predecir su espec
 # Cargar el modelo serializado
 import os
 
-# Define la ruta relativa
-file_path = os.path.join('Data', 'modelo_prueba_iris.pkl')
+# Define la ruta relativa (retrocedemos un nivel con '..' y luego accedemos a 'Data')
+file_path = os.path.join('..', '..', 'Data', 'modelo_prueba_iris.pkl')
 
 # Abre el archivo
 with open(file_path, 'rb') as file:
     model = pickle.load(file)
-
-
 
 # Crear sliders para ingresar las características de Iris
 st.sidebar.header('📊 Características de la Flor Iris')
